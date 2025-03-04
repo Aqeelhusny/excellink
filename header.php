@@ -67,7 +67,6 @@
                     <div class="yith searchproductshead">
                         <?php echo do_shortcode('[yith_woocommerce_ajax_search preset="default"]'); ?>
                     </div>
-a   
 
                     <p class="cartheadico">Cart</p>
                 </div>
