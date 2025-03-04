@@ -1,0 +1,452 @@
+/**
+ * Woocommerce Checkout Customization CSS
+ * Add this to your theme's style.css or create a separate CSS file and enqueue it
+ */
+
+/* Main layout structure */
+.woocommerce-checkout {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+.woocommerce-checkout .woocommerce {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Two-column layout */
+.woocommerce-checkout .col2-set {
+    width: 58% !important;
+    float: left;
+    margin-right: 4%;
+}
+
+.woocommerce-checkout #order_review_heading,
+.woocommerce-checkout #order_review {
+    width: 38%;
+    float: right;
+    clear: right;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .woocommerce-checkout .col2-set,
+    .woocommerce-checkout #order_review_heading,
+    .woocommerce-checkout #order_review {
+        width: 100%;
+        float: none;
+    }
+}
+
+/* Coupon box styling */
+.woocommerce-form-coupon-toggle {
+    width: 100%;
+    clear: both;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.woocommerce-form-coupon-toggle .woocommerce-info {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 15px !important;
+    margin: 0 !important;
+    color: #333 !important;
+    font-size: 14px;
+}
+
+.woocommerce-form-coupon-toggle .woocommerce-info:before {
+    display: none;
+}
+
+.woocommerce-form-coupon-toggle .showcoupon {
+    color: #6b5acd;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.checkout_coupon.woocommerce-form-coupon {
+    border: 1px solid #eee !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.checkout_coupon.woocommerce-form-coupon p {
+    margin-bottom: 10px !important;
+}
+
+.checkout_coupon.woocommerce-form-coupon .form-row-first {
+    width: 70% !important;
+}
+
+.checkout_coupon.woocommerce-form-coupon .form-row-last {
+    width: 28% !important;
+}
+
+.checkout_coupon.woocommerce-form-coupon .input-text {
+    padding: 12px !important;
+    height: auto !important;
+}
+
+.checkout_coupon.woocommerce-form-coupon .button {
+    background-color: #6b5acd !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 20px !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+}
+
+/* Free shipping message */
+.woocommerce-cart-notice {
+    background-color: #f1f8ff;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border-left: 3px solid #6b5acd;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Billing details styling */
+.woocommerce-billing-fields,
+.woocommerce-shipping-fields,
+.woocommerce-additional-fields {
+    background-color: #fff;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.woocommerce-billing-fields h3,
+.woocommerce-shipping-fields h3,
+.woocommerce-additional-fields h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.woocommerce-checkout .form-row label {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.woocommerce-checkout .form-row .required {
+    color: #b22222;
+}
+
+.woocommerce-checkout .form-row .input-text,
+.woocommerce-checkout .form-row select {
+    font-size: 14px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: none;
+    transition: border-color 0.3s;
+}
+
+.woocommerce-checkout .form-row .input-text:focus,
+.woocommerce-checkout .form-row select:focus {
+    border-color: #6b5acd;
+    outline: none;
+}
+
+/* Country/state dropdown styling */
+.select2-container--default .select2-selection--single {
+    height: 42px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 42px !important;
+    padding-left: 12px !important;
+    color: #333 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 40px !important;
+    right: 6px !important;
+}
+
+/* Order summary styling */
+#order_review_heading {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#order_review {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.woocommerce-checkout-review-order-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.woocommerce-checkout-review-order-table th {
+    text-align: left;
+    font-weight: 600;
+}
+
+.woocommerce-checkout-review-order-table .product-name {
+    width: 60%;
+}
+
+.woocommerce-checkout-review-order-table .product-total {
+    text-align: right;
+    width: 40%;
+}
+
+.woocommerce-checkout-review-order-table .cart_item td {
+    padding: 12px 0;
+}
+
+.woocommerce-checkout-review-order-table tfoot th {
+    text-align: left;
+    font-weight: 400;
+}
+
+.woocommerce-checkout-review-order-table tfoot td {
+    text-align: right;
+}
+
+.woocommerce-checkout-review-order-table tfoot tr:last-child th,
+.woocommerce-checkout-review-order-table tfoot tr:last-child td {
+    font-weight: 700;
+    font-size: 16px;
+    border-bottom: none;
+}
+
+.woocommerce-checkout-review-order-table small {
+    color: #777;
+    font-size: 12px;
+}
+
+/* Shipping options styling */
+.woocommerce-checkout-review-order-table .shipping td {
+    text-align: right;
+}
+
+.woocommerce-checkout-review-order-table .shipping ul {
+    text-align: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.woocommerce-checkout-review-order-table .shipping li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.woocommerce-checkout-review-order-table .shipping input {
+    margin-right: 8px;
+}
+
+.woocommerce-checkout-review-order-table .shipping label {
+    flex: 1;
+}
+
+/* Payment methods styling */
+.woocommerce-checkout #payment {
+    background-color: #fff !important;
+    border-radius: 4px !important;
+    margin-top: 20px;
+}
+
+.woocommerce-checkout #payment ul.payment_methods {
+    padding: 0 !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+.woocommerce-checkout #payment ul.payment_methods li {
+    padding: 15px 0 !important;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.woocommerce-checkout #payment ul.payment_methods li:last-child {
+    border-bottom: none;
+}
+
+.woocommerce-checkout #payment div.payment_box {
+    background-color: #f2f9ff !important;
+    color: #333 !important;
+    border-radius: 4px !important;
+    margin: 10px 0 0 !important;
+    padding: 15px !important;
+    font-size: 14px !important;
+}
+
+.woocommerce-checkout #payment div.payment_box:before {
+    border-bottom-color: #f2f9ff !important;
+}
+
+.woocommerce-checkout #payment div.payment_box p {
+    margin-bottom: 0 !important;
+}
+
+.woocommerce-checkout #payment ul.payment_methods li input {
+    margin-right: 10px !important;
+}
+
+.woocommerce-checkout #payment ul.payment_methods li label {
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Direct bank transfer styling */
+.payment_method_bacs p {
+    background-color: #f2f9ff;
+    padding: 15px;
+    border-left: 3px solid #7ebef7;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 10px !important;
+}
+
+/* Place order button styling */
+#place_order {
+    width: 100%;
+    background-color: #6b5acd !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 15px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+    margin-top: 15px !important;
+    text-transform: none !important;
+}
+
+#place_order:hover {
+    background-color: #5a49b6 !important;
+}
+
+/* Terms and conditions styling */
+.woocommerce-terms-and-conditions-wrapper {
+    margin: 20px 0;
+}
+
+.woocommerce-privacy-policy-text {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.woocommerce-terms-and-conditions-checkbox-text {
+    font-size: 14px;
+}
+
+.woocommerce-terms-and-conditions-checkbox-text a {
+    color: #6b5acd;
+    text-decoration: none;
+}
+
+/* Create account checkbox */
+.create-account label {
+    font-weight: normal !important;
+    font-size: 14px !important;
+}
+
+.create-account input[type="checkbox"] {
+    margin-right: 8px !important;
+}
+
+/* Ship to different address checkbox */
+.ship-to-different-address {
+    margin-bottom: 15px !important;
+}
+
+.ship-to-different-address label {
+    font-weight: normal !important;
+    font-size: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.ship-to-different-address input[type="checkbox"] {
+    margin-right: 8px !important;
+}
+
+/* Order notes styling */
+.woocommerce-additional-fields textarea {
+    height: 100px !important;
+}
+
+/* Notices */
+.woocommerce-error, 
+.woocommerce-info, 
+.woocommerce-message {
+    padding: 15px 15px 15px 45px !important;
+    margin-bottom: 20px !important;
+    background-color: #f8f8f8 !important;
+    color: #333 !important;
+    border-top: 3px solid #6b5acd !important;
+    border-radius: 4px !important;
+    position: relative;
+}
+
+.woocommerce-error::before, 
+.woocommerce-info::before, 
+.woocommerce-message::before {
+    color: #6b5acd !important;
+}
+
+.woocommerce-error {
+    border-top-color: #b22222 !important;
+}
+
+.woocommerce-error::before {
+    color: #b22222 !important;
+}
+
+/* Add to Cart Banner */
+.woocommerce-cart-notice-minimum-amount {
+    background-color: #f8f8f8 !important;
+    border: 1px solid #ddd !important;
+    padding: 15px !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    color: #333 !important;
+    margin-bottom: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.woocommerce-cart-notice-minimum-amount:before {
+    content: '⚠️';
+    margin-right: 10px;
+}
+
+/* Highlight the free shipping amount text */
+.woocommerce-cart-notice-minimum-amount strong {
+    color: #6b5acd;
+    font-weight: 600;
+}
