@@ -12058,15 +12058,16 @@ textarea.form-control-lg {
 /**
  * Add this CSS to your theme's style.css file or through WordPress Customizer's Additional CSS
  */
-/* Custom product card styling */
 .custom-product-card {
   position: relative;
   border: 1px solid #eee;
   border-radius: 5px;
-  padding: 15px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 210px;
+  margin: 0 auto;
   transition: box-shadow 0.3s ease;
 }
 
@@ -12115,6 +12116,7 @@ textarea.form-control-lg {
   height: 10px;
   border-radius: 50%;
   margin-right: 5px;
+  flex-shrink: 0;
 }
 
 /* Stock status colors */
@@ -12147,18 +12149,11 @@ textarea.form-control-lg {
   color: #000;
 }
 
-/* Product meta info (size, weight, etc.) */
-.custom-product-meta {
-  font-size: 12px;
-  color: #777;
-  margin-bottom: 8px;
-}
-
 /* Product price */
 .custom-product-price {
   font-weight: 600;
   color: #333;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .custom-product-price del {
@@ -12172,56 +12167,117 @@ textarea.form-control-lg {
   color: #e53935;
 }
 
-/* Product rating */
-.custom-product-rating {
+/* Product Add to Cart section */
+.custom-product-add-to-cart {
+  margin-top: auto;
+}
+
+.inline-quantity-cart {
   display: flex;
   align-items: center;
 }
 
-.custom-product-rating .star-rating {
+/* Quantity Input styling */
+.woocommerce .quantity .qty {
+  width: 100%;
+  height: 38px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Add to cart button styling */
+.add-to-cart-btn-cs {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 38px;
+  line-height: 1.5;
+}
+
+/* Apply Bootstrap Grid to WooCommerce product lists */
+ul.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 12px;
+  -moz-column-gap: 6px;
+       column-gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.custom-product {
+  margin-bottom: 20px;
+  /* Override Bootstrap column widths to allow fixed card width */
+  width: auto !important;
+  max-width: none !important;
+  flex: 0 0 auto !important;
+  padding: 0 !important;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 767px) {
+  .custom-product-card {
+    padding: 10px;
+    /* Keep the same width on mobile but adjust other properties */
+    width: 210px;
+  }
+  .custom-onsale {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  .custom-product-title {
+    font-size: 13px;
+  }
+  .woocommerce .quantity .qty {
+    height: 36px;
+    font-size: 13px;
+  }
+  .add-to-cart-btn-cs {
+    padding: 7px 10px;
+    font-size: 13px;
+    height: 36px;
+  }
+}
+@media (max-width: 576px) {
+  .inline-quantity-cart {
+    margin: 0 -5px;
+  }
+  .custom-product-price {
+    font-size: 14px;
+  }
+}
+@media (max-width: 446.98px) {
+  .custom-product-card {
+    padding: 10px;
+    /* Keep the same width on mobile but adjust other properties */
+    width: 182px;
+  }
+}
+/* Remove default WooCommerce grid styles to avoid conflicts */
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
   float: none;
-  margin-right: 5px;
+  margin: 0;
+  width: auto;
+  clear: none;
 }
 
-.custom-product-rating .rating-count {
-  font-size: 12px;
-  color: #777;
+/* Ensure Bootstrap columns work properly in WooCommerce */
+.woocommerce ul.products {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
 }
 
-/* Adjust product grid layout for 5 columns in featured_products shortcode */
-@media (min-width: 992px) {
-  ul.products.columns-5 {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  ul.products.columns-5 li.product {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-}
-/* Responsive adjustments */
-@media (max-width: 991px) {
-  ul.products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-}
-@media (max-width: 768px) {
-  ul.products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 480px) {
-  ul.products {
-    grid-template-columns: 1fr;
-  }
-}
 /* Global Custom Breadcrumb */
 .custom-breadcrumb {
   margin: 20px 0;

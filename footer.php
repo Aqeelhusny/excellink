@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center mb-3">
                     <i class="fas fa-envelope me-2"></i>
                     <div>
                         <div class="small text-muted">Need help with your order?</div>
