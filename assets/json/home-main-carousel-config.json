@@ -15,24 +15,24 @@
         },
         {
           "desktop": {
-            "image": "http://woo.local/wp-content/uploads/2018/04/single_post_4.jpg",
+            "image": "http://woo.local/wp-content/uploads/2021/11/single_post_slider_3.jpg",
             "alt": "Desktop Slide 2 Description", 
             "link": "/target-page-2"
           },
           "mobile": {
-            "image": "http://woo.local/wp-content/uploads/2018/04/single_post_4.jpg",
+            "image": "http://woo.local/wp-content/uploads/2021/11/single_post_slider_3.jpg",
             "alt": "Mobile Slide 2 Description",
             "link": "/target-page-2"
           }
         },
         {
           "desktop": {
-            "image": "http://woo.local/wp-content/uploads/2018/04/single_post_4.jpg",
+            "image": "http://woo.local/wp-content/uploads/2021/11/post1.jpg",
             "alt": "Desktop Slide 3 Description",
             "link": "/target-page-3"
           },
           "mobile": {
-            "image": "http://woo.local/wp-content/uploads/2018/04/single_post_4.jpg",
+            "image": "http://woo.local/wp-content/uploads/2021/11/post1.jpg",
             "alt": "Mobile Slide 3 Description",
             "link": "/target-page-3"
           }

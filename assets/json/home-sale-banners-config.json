@@ -12,6 +12,18 @@
           "link": "/shop/womens-collection"
         }
       },
+      "middle_banner": {
+            "desktop": {
+                "image": "http://woo.local/wp-content/uploads/2021/11/single_post_slider_3.jpg",
+                "alt": "Middle Banner Desktop",
+                "link": "/middle-banner-link"
+            },
+            "mobile": {
+                "image": "http://woo.local/wp-content/uploads/2021/11/single_post_slider_3.jpg",
+                "alt": "Middle Banner Mobile",
+                "link": "/middle-banner-link"
+            }
+        },
       "right_banner": {
         "desktop": {
           "image": "http://woo.local/wp-content/uploads/2018/04/single_post_5.jpg",
