@@ -307,6 +307,8 @@ endif; ?>
     do_action('woocommerce_after_single_product_summary'); 
     ?>
     
+   
+
     <?php endwhile; // end of the loop. ?>
 </section>
 
@@ -323,6 +325,6 @@ do_action('woocommerce_after_main_content');
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action('woocommerce_sidebar');
+// do_action('woocommerce_sidebar');
 
 get_footer('shop');
