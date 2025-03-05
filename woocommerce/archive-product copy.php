@@ -8,28 +8,22 @@
 defined('ABSPATH') || exit;
 
 get_header('shop');
+
+/**
+ * Hook: woocommerce_before_main_content.
+ */
+// do_action('woocommerce_before_main_content');
 ?>
 
 <section class="container">
-    <div class="custom-breadcrumb py-2">
+    <div class="custom-breadcrumb">
         <?php woocommerce_breadcrumb(); ?>
     </div>
 
-    <div class="shop-mobile-filter-toggle d-md-none mb-3">
-        <button class="filter-toggle-btn">
-            <span class="filter-icon"><i class="fas fa-filter"></i></span>
-            <span>Show Filters</span>
-        </button>
-    </div>
-
     <div class="grocery-shop-container">
-        <!-- Sidebar / Filter Column -->
-        <div class="shop-sidebar" id="shopSidebar">
-            <div class="sidebar-header d-md-none">
-                <h3>Filters</h3>
-                <button class="close-sidebar">&times;</button>
-            </div>
 
+        <!-- Sidebar / Filter Column -->
+        <div class="shop-sidebar">
             <div class="sidebar-section widget-price-range">
                 <h3 class="sidebar-title"><?php esc_html_e('Price Range', 'woocommerce'); ?></h3>
                 <div class="price-inputs">
@@ -104,12 +98,8 @@ get_header('shop');
 
             <div class="sidebar-section filter-actions">
                 <button class="filter-all-btn"><?php esc_html_e('Apply Filters', 'woocommerce'); ?></button>
-                <button class="reset-filters-btn d-md-none"><?php esc_html_e('Reset Filters', 'woocommerce'); ?></button>
             </div>
         </div>
-
-        <!-- Sidebar Overlay for Mobile -->
-        <div class="sidebar-overlay d-md-none"></div>
 
         <!-- Main Content / Products Column -->
         <div class="shop-main-content">
@@ -118,52 +108,84 @@ get_header('shop');
                 <h1 class="woocommerce-products-header__title page-title">
                     <?php woocommerce_page_title(); ?>
                 </h1>
+                <!-- <?php if (is_product_category()) : ?>
+                <div class="category-description">
+                    <?php
+                        // Get the current category
+                        $category = get_queried_object();
+                        
+                        // Display the category description if it exists
+                        if ($category && !empty($category->description)) {
+                            echo '<div class="term-description">' . wc_format_content($category->description) . '</div>';
+                        } else {
+                            // Fallback description
+                            echo '<p class="category-tagline">' . esc_html__('Discover our selection of fresh and quality products', 'woocommerce') . '</p>';
+                        }
+                        ?>
+                </div>
+                <?php endif; ?> -->
             </header>
             <?php endif; ?>
 
             <?php
-            /**
-             * Hook: woocommerce_archive_description.
-             */
-            do_action('woocommerce_archive_description');
-            ?>
+        /**
+         * Hook: woocommerce_archive_description.
+         */
+        do_action('woocommerce_archive_description');
+        ?>
 
             <div class="shop-toolbar">
                 <?php
-                /**
-                 * Hook: woocommerce_before_shop_loop.
-                 */
-                do_action('woocommerce_before_shop_loop');
-                ?>
+            /**
+             * Hook: woocommerce_before_shop_loop.
+             *
+             * @hooked woocommerce_output_all_notices - 10
+             * @hooked woocommerce_result_count - 20
+             * @hooked woocommerce_catalog_ordering - 30
+             */
+            do_action('woocommerce_before_shop_loop');
+            ?>
             </div>
 
             <?php if (woocommerce_product_loop()) : ?>
                 <div class="custom-products-wrapper">
-                    <ul class="products">
-                        <?php
-                        while (have_posts()) {
-                            the_post();
-                            wc_get_template_part('content', 'product');
-                        }
-                        ?>
-                    </ul>
-                </div>
+        <ul class="products columns-3">
+            <?php
+            while (have_posts()) {
+                the_post();
+                wc_get_template_part('content', 'product');
+            }
+            ?>
+        </ul>
+    </div>
+            
 
-                <?php
-                /**
-                 * Hook: woocommerce_after_shop_loop.
-                 */
-                do_action('woocommerce_after_shop_loop');
-                ?>
+            <?php
+            /**
+             * Hook: woocommerce_after_shop_loop.
+             *
+             * @hooked woocommerce_pagination - 10
+             */
+            do_action('woocommerce_after_shop_loop');
+            ?>
 
             <?php else : ?>
-                <?php do_action('woocommerce_no_products_found'); ?>
+            <?php
+            /**
+             * Hook: woocommerce_no_products_found.
+             *
+             * @hooked wc_no_products_found - 10
+             */
+            do_action('woocommerce_no_products_found');
+            ?>
             <?php endif; ?>
         </div>
     </div>
 </section>
-
 <?php
+/**
+ * Hook: woocommerce_after_main_content.
+ */
 do_action('woocommerce_after_main_content');
+
 get_footer('shop');
-?>

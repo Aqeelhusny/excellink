@@ -1,0 +1,29 @@
+{
+    "promotional_banners": {
+      "left_banner": {
+        "desktop": {
+          "image": "http://woo.local/wp-content/uploads/2018/04/single_post_4.jpg",
+          "alt": "Shop Women's Collection - Up to 40% Off",
+          "link": "/shop/womens-collection"
+        },
+        "mobile": {
+          "image": "http://woo.local/wp-content/uploads/2018/04/single_post_4.jpg",
+          "alt": "Women's Collection Sale Mobile",
+          "link": "/shop/womens-collection"
+        }
+      },
+      "right_banner": {
+        "desktop": {
+          "image": "http://woo.local/wp-content/uploads/2018/04/single_post_5.jpg",
+          "alt": "New Men's Arrivals - Summer Collection",
+          "link": "/shop/mens-collection"
+        },
+        "mobile": {
+          "image": "http://woo.local/wp-content/uploads/2018/04/single_post_5.jpg",
+          "alt": "Men's Summer Collection Mobile",
+          "link": "/shop/mens-collection"
+        }
+      }
+    }
+  }
+  

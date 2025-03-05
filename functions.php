@@ -138,8 +138,9 @@ add_action( 'widgets_init', 'excellink_store_widgets_init' );
  * Enqueue scripts and styles.
  */
 function excellink_store_scripts() {
-	wp_enqueue_style( 'excellink-store-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'excellink-store-style', 'rtl', 'replace' );
+	// wp_enqueue_style( 'excellink-store-style', get_stylesheet_uri(), array(), _S_VERSION );
+	// wp_style_add_data( 'excellink-store-style', 'rtl', 'replace' );
+    wp_enqueue_style( 'excellink-store-style', get_template_directory_uri() . '/style.min.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'excellink-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -511,3 +512,372 @@ function checkout_product_thumbnail_css() {
     <?php
 }
 add_action('wp_head', 'checkout_product_thumbnail_css');
+
+
+// Register Slider Custom Post Type
+function register_slider_post_type() {
+    $labels = array(
+        'name'               => 'Slides',
+        'singular_name'      => 'Slide',
+        'menu_name'          => 'Banner Slider',
+        'add_new'            => 'Add New',
+        'add_new_item'       => 'Add New Slide',
+        'edit_item'          => 'Edit Slide',
+        'new_item'           => 'New Slide',
+        'view_item'          => 'View Slide',
+        'search_items'       => 'Search Slides',
+        'not_found'          => 'No slides found',
+        'not_found_in_trash' => 'No slides found in Trash',
+    );
+    
+    $args = array(
+        'labels'              => $labels,
+        'public'              => true,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => false,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'menu_icon'           => 'dashicons-images-alt2',
+        'hierarchical'        => false,
+        'supports'            => array('title', 'thumbnail', 'page-attributes'),
+        'has_archive'         => false,
+        'rewrite'             => false,
+        'menu_position'       => 20,
+    );
+    
+    register_post_type('slide', $args);
+}
+add_action('init', 'register_slider_post_type');
+
+// Add custom image sizes
+add_theme_support('post-thumbnails');
+add_image_size('slider-desktop', 1920, 600, true);
+add_image_size('slider-mobile', 768, 500, true);
+
+// Add custom meta boxes for mobile image and slide details
+function slider_meta_boxes() {
+    add_meta_box(
+        'slide_details',
+        'Slide Details',
+        'slide_details_callback',
+        'slide',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'slider_meta_boxes');
+
+// Callback function for the meta box
+function slide_details_callback($post) {
+    wp_nonce_field('slide_details_nonce', 'slide_details_nonce');
+    
+    $mobile_image = get_post_meta($post->ID, '_mobile_image', true);
+    $slide_description = get_post_meta($post->ID, '_slide_description', true);
+    $button_text = get_post_meta($post->ID, '_button_text', true);
+    $button_url = get_post_meta($post->ID, '_button_url', true);
+    ?>
+    <p>
+        <label for="mobile_image">Mobile Image (if different from featured image):</label><br>
+        <input type="hidden" name="mobile_image" id="mobile_image" value="<?php echo esc_attr($mobile_image); ?>">
+        <button type="button" class="button" id="mobile_image_button">Select Image</button>
+        <div id="mobile_image_preview" style="margin-top: 10px;">
+            <?php if($mobile_image): ?>
+                <?php echo wp_get_attachment_image($mobile_image, 'medium'); ?>
+            <?php endif; ?>
+        </div>
+    </p>
+    <p>
+        <label for="slide_description">Slide Description:</label><br>
+        <textarea name="slide_description" id="slide_description" class="large-text" rows="3"><?php echo esc_textarea($slide_description); ?></textarea>
+    </p>
+    <p>
+        <label for="button_text">Button Text (optional):</label><br>
+        <input type="text" name="button_text" id="button_text" class="regular-text" value="<?php echo esc_attr($button_text); ?>">
+    </p>
+    <p>
+        <label for="button_url">Button URL (optional):</label><br>
+        <input type="url" name="button_url" id="button_url" class="large-text" value="<?php echo esc_url($button_url); ?>">
+    </p>
+    <script>
+    jQuery(document).ready(function($) {
+        $('#mobile_image_button').click(function() {
+            var frame = wp.media({
+                title: 'Select Mobile Image',
+                multiple: false,
+                library: { type: 'image' }
+            });
+            
+            frame.on('select', function() {
+                var attachment = frame.state().get('selection').first().toJSON();
+                $('#mobile_image').val(attachment.id);
+                $('#mobile_image_preview').html('<img src="' + attachment.url + '" style="max-width: 300px; height: auto;">');
+            });
+            
+            frame.open();
+        });
+    });
+    </script>
+    <?php
+}
+
+// Save the meta box data
+function save_slide_details($post_id) {
+    if(!isset($_POST['slide_details_nonce']) || !wp_verify_nonce($_POST['slide_details_nonce'], 'slide_details_nonce')) {
+        return;
+    }
+    
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    
+    if(!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    
+    if(isset($_POST['mobile_image'])) {
+        update_post_meta($post_id, '_mobile_image', sanitize_text_field($_POST['mobile_image']));
+    }
+    
+    if(isset($_POST['slide_description'])) {
+        update_post_meta($post_id, '_slide_description', sanitize_textarea_field($_POST['slide_description']));
+    }
+    
+    if(isset($_POST['button_text'])) {
+        update_post_meta($post_id, '_button_text', sanitize_text_field($_POST['button_text']));
+    }
+    
+    if(isset($_POST['button_url'])) {
+        update_post_meta($post_id, '_button_url', esc_url_raw($_POST['button_url']));
+    }
+}
+add_action('save_post_slide', 'save_slide_details');
+
+
+/**
+ * Banner Shortcodes
+ */
+
+// Single Banner Shortcode
+function single_banner_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'desktop' => '',         // Desktop image URL
+        'mobile' => '',          // Mobile image URL
+        'title' => '',           // Banner title
+        'description' => '',     // Banner description
+        'button_text' => '',     // Button text
+        'button_url' => '',      // Button URL
+        'button_class' => 'btn btn-primary', // Button class
+        'height' => 'auto',      // Banner height (desktop)
+        'mobile_height' => 'auto', // Banner height (mobile)
+        'text_color' => '#fff',  // Text color
+        'text_position' => 'center', // Text position: left, center, right
+    ), $atts);
+    
+    ob_start();
+    ?>
+    <div class="promo-banner">
+        <div class="d-none d-md-block">
+            <?php if($atts['desktop']): ?>
+                <div class="banner-image-container" style="height: <?php echo esc_attr($atts['height']); ?>;">
+                    <img src="<?php echo esc_url($atts['desktop']); ?>" class="banner-image" alt="<?php echo esc_attr($atts['title']); ?>">
+                </div>
+            <?php endif; ?>
+        </div>
+        
+        <div class="d-block d-md-none">
+            <?php if($atts['mobile']): ?>
+                <div class="banner-image-container" style="height: <?php echo esc_attr($atts['mobile_height']); ?>;">
+                    <img src="<?php echo esc_url($atts['mobile']); ?>" class="banner-image" alt="<?php echo esc_attr($atts['title']); ?>">
+                </div>
+            <?php elseif($atts['desktop']): ?>
+                <div class="banner-image-container" style="height: <?php echo esc_attr($atts['mobile_height']); ?>;">
+                    <img src="<?php echo esc_url($atts['desktop']); ?>" class="banner-image" alt="<?php echo esc_attr($atts['title']); ?>">
+                </div>
+            <?php endif; ?>
+        </div>
+        
+        <?php if($atts['title'] || $atts['description'] || ($atts['button_text'] && $atts['button_url'])): ?>
+            <div class="banner-content text-<?php echo esc_attr($atts['text_position']); ?>" style="color: <?php echo esc_attr($atts['text_color']); ?>">
+                <?php if($atts['title']): ?>
+                    <h2 class="banner-title"><?php echo esc_html($atts['title']); ?></h2>
+                <?php endif; ?>
+                
+                <?php if($atts['description']): ?>
+                    <div class="banner-description"><?php echo wp_kses_post($atts['description']); ?></div>
+                <?php endif; ?>
+                
+                <?php if($atts['button_text'] && $atts['button_url']): ?>
+                    <a href="<?php echo esc_url($atts['button_url']); ?>" class="<?php echo esc_attr($atts['button_class']); ?>"><?php echo esc_html($atts['button_text']); ?></a>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('banner', 'single_banner_shortcode');
+
+// Slider Banner Shortcode
+function slider_banner_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'count' => 5,           // Number of slides to show
+        'category' => '',       // Optional category slug to filter slides
+        'height' => 'auto',     // Banner height (desktop)
+        'mobile_height' => 'auto', // Banner height (mobile)
+        'interval' => 5000,     // Time between slides (ms)
+        'id' => 'bannerCarousel' . rand(100, 999), // Unique ID
+    ), $atts);
+    
+    // Query slides
+    $args = array(
+        'post_type' => 'slide',
+        'posts_per_page' => intval($atts['count']),
+        'orderby' => 'menu_order',
+        'order' => 'ASC'
+    );
+    
+    // Add category filter if provided
+    if(!empty($atts['category'])) {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'slide_category',
+                'field' => 'slug',
+                'terms' => $atts['category']
+            )
+        );
+    }
+    
+    $slides = new WP_Query($args);
+    
+    if(!$slides->have_posts()) {
+        return '<div class="alert alert-info">No slides found</div>';
+    }
+    
+    ob_start();
+    ?>
+    <div id="<?php echo esc_attr($atts['id']); ?>" class="carousel slide" data-bs-ride="carousel" data-bs-interval="<?php echo esc_attr($atts['interval']); ?>">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <?php 
+            $slide_count = 0;
+            while($slides->have_posts()): $slides->the_post(); 
+            ?>
+                <button type="button" data-bs-target="#<?php echo esc_attr($atts['id']); ?>" data-bs-slide-to="<?php echo $slide_count; ?>" <?php echo ($slide_count == 0) ? 'class="active"' : ''; ?>></button>
+            <?php 
+                $slide_count++;
+            endwhile; 
+            $slides->rewind_posts();
+            ?>
+        </div>
+        
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <?php 
+            $slide_count = 0;
+            while($slides->have_posts()): $slides->the_post();
+                $mobile_image_id = get_post_meta(get_the_ID(), '_mobile_image', true);
+                $slide_description = get_post_meta(get_the_ID(), '_slide_description', true);
+                $button_text = get_post_meta(get_the_ID(), '_button_text', true);
+                $button_url = get_post_meta(get_the_ID(), '_button_url', true);
+            ?>
+                <div class="carousel-item <?php echo ($slide_count == 0) ? 'active' : ''; ?>">
+                    <!-- Desktop Image -->
+                    <div class="d-none d-md-block">
+                        <?php if(has_post_thumbnail()): ?>
+                            <div class="banner-image-container" style="height: <?php echo esc_attr($atts['height']); ?>;">
+                                <?php the_post_thumbnail('full', array('class' => 'banner-image')); ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    
+                    <!-- Mobile Image -->
+                    <div class="d-block d-md-none">
+                        <?php if($mobile_image_id): ?>
+                            <div class="banner-image-container" style="height: <?php echo esc_attr($atts['mobile_height']); ?>;">
+                                <?php echo wp_get_attachment_image($mobile_image_id, 'full', false, array('class' => 'banner-image')); ?>
+                            </div>
+                        <?php elseif(has_post_thumbnail()): ?>
+                            <div class="banner-image-container" style="height: <?php echo esc_attr($atts['mobile_height']); ?>;">
+                                <?php the_post_thumbnail('full', array('class' => 'banner-image')); ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    
+                    <?php if(get_the_title() || $slide_description || ($button_text && $button_url)): ?>
+                        <div class="carousel-caption">
+                            <h2><?php the_title(); ?></h2>
+                            <?php if($slide_description): ?>
+                                <div class="slide-description"><?php echo wp_kses_post($slide_description); ?></div>
+                            <?php endif; ?>
+                            
+                            <?php if($button_text && $button_url): ?>
+                                <a href="<?php echo esc_url($button_url); ?>" class="btn btn-primary"><?php echo esc_html($button_text); ?></a>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php
+                $slide_count++;
+            endwhile;
+            wp_reset_postdata();
+            ?>
+        </div>
+        
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#<?php echo esc_attr($atts['id']); ?>" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#<?php echo esc_attr($atts['id']); ?>" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('slider', 'slider_banner_shortcode');
+
+// Add slide categories taxonomy
+function register_slide_taxonomy() {
+    $labels = array(
+        'name'              => 'Slide Categories',
+        'singular_name'     => 'Slide Category',
+        'search_items'      => 'Search Categories',
+        'all_items'         => 'All Categories',
+        'parent_item'       => 'Parent Category',
+        'parent_item_colon' => 'Parent Category:',
+        'edit_item'         => 'Edit Category',
+        'update_item'       => 'Update Category',
+        'add_new_item'      => 'Add New Category',
+        'new_item_name'     => 'New Category Name',
+        'menu_name'         => 'Categories',
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'slide-category'),
+    );
+
+    register_taxonomy('slide_category', array('slide'), $args);
+}
+add_action('init', 'register_slide_taxonomy');
+
+//home page load more products just for you section
+function load_more_products() {
+    $page = $_POST['page'];
+    echo do_shortcode('[products limit="24" columns="6" orderby="rand" page="' . $page . '"]');
+    die();
+}
+add_action('wp_ajax_load_more_products', 'load_more_products');
+add_action('wp_ajax_nopriv_load_more_products', 'load_more_products');
+
+function enqueue_load_more_script() {
+    wp_enqueue_script('load-more', get_template_directory_uri() . '/js/load-more.js', array('jquery'), '1.0', true);
+    wp_localize_script('load-more', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+}
+add_action('wp_enqueue_scripts', 'enqueue_load_more_script');
