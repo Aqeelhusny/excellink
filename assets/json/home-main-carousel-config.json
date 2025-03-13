@@ -1,43 +1,42 @@
 {
-    "carousel": {
-      "slides": [
-        {
-          "desktop": {
-            "image": "http://woo.local/wp-content/uploads/2018/04/single_post_4.jpg",
-            "alt": "Desktop Slide 1 Description",
-            "link": "/target-page-1"
-          },
-          "mobile": {
-            "image": "http://woo.local/wp-content/uploads/2018/04/single_post_4.jpg", 
-            "alt": "Mobile Slide 1 Description",
-            "link": "/target-page-1"
-          }
+  "carousel": {
+    "slides": [
+      {
+        "desktop": {
+          "image": "https://pub-7e33b66fd6194a349b47faf56689f4e2.r2.dev/Excellink_home_banner/home%20banner.png",
+          "alt": "Free Shipping Islandwide",
+          "link": "/shop"
         },
-        {
-          "desktop": {
-            "image": "http://woo.local/wp-content/uploads/2021/11/single_post_slider_3.jpg",
-            "alt": "Desktop Slide 2 Description", 
-            "link": "/target-page-2"
-          },
-          "mobile": {
-            "image": "http://woo.local/wp-content/uploads/2021/11/single_post_slider_3.jpg",
-            "alt": "Mobile Slide 2 Description",
-            "link": "/target-page-2"
-          }
-        },
-        {
-          "desktop": {
-            "image": "http://woo.local/wp-content/uploads/2021/11/post1.jpg",
-            "alt": "Desktop Slide 3 Description",
-            "link": "/target-page-3"
-          },
-          "mobile": {
-            "image": "http://woo.local/wp-content/uploads/2021/11/post1.jpg",
-            "alt": "Mobile Slide 3 Description",
-            "link": "/target-page-3"
-          }
+        "mobile": {
+          "image": "https://image.excellink.lk/Excellink_home_banner/home%20banner.png", 
+          "alt": "Free Shipping Islandwide",
+          "link": "/shop"
         }
-      ]
-    }
+      },
+      {
+        "desktop": {
+          "image": "https://image.excellink.lk/Excellink_home_banner/2.png",
+          "alt": "Mintpay flat 5% discount", 
+          "link": "/shop"
+        },
+        "mobile": {
+          "image": "https://image.excellink.lk/Copy%20of%20Homepage%20Desktop%20banners%20(600%20x%20230%20px)%20(1).png",
+          "alt": "Mintpay flat 5% discount",
+          "link": "/shop"
+        }
+      },
+      {
+        "desktop": {
+          "image": "https://image.excellink.lk/Excellink_home_banner/Homepage%20Desktop%20banners.png",
+          "alt": "Plunger Cutters",
+          "link": "/product-category/plunger-cutters/"
+        },
+        "mobile": {
+          "image": "https://image.excellink.lk/Excellink_home_banner/3.png",
+          "alt": "Plunger Cutters",
+          "link": "/product-category/plunger-cutters/"
+        }
+      }
+    ]
   }
-  
+}

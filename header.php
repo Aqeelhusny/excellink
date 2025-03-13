@@ -73,34 +73,67 @@
                 </div>
             </div>
 
-            <div class="menu-container">
-                <div class="container">
-                    <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center">
-                        <!-- Main Navigation -->
-                        <nav id="site-navigation" class="main-navigation">
-                            <?php
-                            wp_nav_menu(
-                                array(
-                                    'theme_location' => 'menu-1',
-                                    'menu_id'        => 'primary-menu',
-                                    'container_class' => 'primary-menu-container',
-                                )
-                            );
-                            ?>
-                        </nav>
-                        
-                        <!-- Account and Tracking Links -->
-                        <div class="header-links d-flex flex-column flex-md-row mt-3 mt-md-0">
-                            <p class="mb-2 mb-md-0 me-md-4">
-                                <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>">
-                                    <?php esc_html_e('Account', 'excellink-store'); ?>
-                                </a>
-                            </p>
-                            <p class="mb-0">
-                                <a href="#">Tracking</a>
-                            </p>
-                        </div>
+            <!-- Desktop Menu -->
+        <div class="menu-container d-none d-md-block">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <nav id="site-navigation" class="main-navigation">
+                        <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'menu-1',
+                                'menu_id'        => 'primary-menu',
+                                'container_class' => 'primary-menu-container',
+                            )
+                        );
+                        ?>
+                    </nav>
+                    
+                    <div class="header-links d-flex">
+                        <p class="mb-0 me-4">
+                            <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>">
+                                <?php esc_html_e('Account', 'excellink-store'); ?>
+                            </a>
+                        </p>
+                        <p class="mb-0">
+                            <a href="#">Tracking</a>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Mobile Off-Canvas Menu -->
+        <div class="d-md-none">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavigation" aria-labelledby="mobileNavigationLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="mobileNavigationLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <nav class="mobile-navigation">
+                        <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'menu-1',
+                                'menu_id'        => 'mobile-menu',
+                                'container_class' => 'mobile-menu-container',
+                            )
+                        );
+                        ?>
+                    </nav>
+                    
+                    <div class="header-links d-flex flex-column mt-4">
+                        <p class="mb-2">
+                            <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>">
+                                <?php esc_html_e('Account', 'excellink-store'); ?>
+                            </a>
+                        </p>
+                        <p class="mb-0">
+                            <a href="#">Tracking</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
         </header><!-- #masthead -->
