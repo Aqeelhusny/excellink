@@ -58,9 +58,10 @@
                                 </a>
                             </div>
                             
-                            <button class="menu-toggle d-md-none ms-3" aria-controls="primary-menu" aria-expanded="false">
+                            <button class="menu-toggle d-md-none ms-3" data-bs-toggle="offcanvas" data-bs-target="#mobileNavigation" aria-controls="mobileNavigation" aria-expanded="false">
                                 <span class="menu-icon"></span>
                             </button>
+
                         </div>
                         
                         <!-- Search on mobile - under logo and cart -->
