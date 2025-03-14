@@ -35,10 +35,8 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <!-- Mobile Navigation -->
-                         <div class="col-3">
-
-                         
-                        <button class="menu-toggle d-md-none ms-3" data-bs-toggle="offcanvas" data-bs-target="#mobileNavigation" aria-controls="mobileNavigation" aria-expanded="false">
+                         <div class="col-3 d-md-none">
+                        <button class="menu-toggle ms-3" data-bs-toggle="offcanvas" data-bs-target="#mobileNavigation" aria-controls="mobileNavigation" aria-expanded="false">
                                  <i class="bi bi-list"></i>
                             </button>
                             </div>
@@ -59,7 +57,7 @@
                         </div>
                         
                         <!-- Cart and mobile menu toggle -->
-                        <div class="col-3 col-xl-6 col-lg-6 col-md-3 d-flex align-items-center justify-content-center">
+                        <div class="col-3 col-md-3 d-flex align-items-center justify-content-center">
                             <div class="cart-container">
                                 <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="cartheadico">
                                     <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
