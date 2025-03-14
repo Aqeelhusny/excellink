@@ -243,44 +243,44 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     padding: 0;
 }
 
-.menu-icon, 
-.menu-icon::before, 
-.menu-icon::after {
-    background-color: #333;
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    transition: all 0.3s ease;
-}
+// .menu-icon, 
+// .menu-icon::before, 
+// .menu-icon::after {
+//     background-color: #333;
+//     height: 2px;
+//     width: 100%;
+//     position: absolute;
+//     transition: all 0.3s ease;
+// }
 
-.menu-icon {
-    top: 50%;
-    transform: translateY(-50%);
-}
+// .menu-icon {
+//     top: 50%;
+//     transform: translateY(-50%);
+// }
 
-.menu-icon::before {
-    content: '';
-    top: -8px;
-}
+// .menu-icon::before {
+//     content: '';
+//     top: -8px;
+// }
 
-.menu-icon::after {
-    content: '';
-    bottom: -8px;
-}
+// .menu-icon::after {
+//     content: '';
+//     bottom: -8px;
+// }
 
-.menu-toggle[aria-expanded="true"] .menu-icon {
-    background-color: transparent;
-}
+// .menu-toggle[aria-expanded="true"] .menu-icon {
+//     background-color: transparent;
+// }
 
-.menu-toggle[aria-expanded="true"] .menu-icon::before {
-    top: 0;
-    transform: rotate(45deg);
-}
+// .menu-toggle[aria-expanded="true"] .menu-icon::before {
+//     top: 0;
+//     transform: rotate(45deg);
+// }
 
-.menu-toggle[aria-expanded="true"] .menu-icon::after {
-    bottom: 0;
-    transform: rotate(-45deg);
-}
+// .menu-toggle[aria-expanded="true"] .menu-icon::after {
+//     bottom: 0;
+//     transform: rotate(-45deg);
+// }
 
 /* Mobile Styles */
 @media screen and (max-width: 767px) {
