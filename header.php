@@ -34,6 +34,11 @@
             <div class="sitehead">
                 <div class="container">
                     <div class="row align-items-center">
+                        <!-- Mobile Navigation -->
+                        <button class="menu-toggle d-md-none ms-3" data-bs-toggle="offcanvas" data-bs-target="#mobileNavigation" aria-controls="mobileNavigation" aria-expanded="false">
+                                 <i class="bi bi-list"></i>
+                            </button>
+
                         <!-- Logo -->
                         <div class="col-6 col-md-3 mb-2 mb-md-0">
                             <a href="<?php echo esc_url(home_url('/')); ?>" class="logo-container">
@@ -57,11 +62,6 @@
                                     <span class="cart-text d-none d-md-inline">Cart</span>
                                 </a>
                             </div>
-                            
-                            <button class="menu-toggle d-md-none ms-3" data-bs-toggle="offcanvas" data-bs-target="#mobileNavigation" aria-controls="mobileNavigation" aria-expanded="false">
-                                <span class="menu-icon"></span>
-                            </button>
-
                         </div>
                         
                         <!-- Search on mobile - under logo and cart -->
