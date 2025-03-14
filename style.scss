@@ -553,7 +553,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 /* Add to cart button styling */
-.add-to-cart-btn-cs {
+.add-to-cart-btn-cs,
+.added_to_cart.wc-forward {
     display: inline-block;
     padding: 8px 16px;
     font-size: 14px;
