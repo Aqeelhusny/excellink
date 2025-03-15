@@ -192,10 +192,10 @@ get_header('shop');
                     echo '</div>';
                     
                     // Add to cart button group
-                    echo '<div class="button-group">';
-                    echo '<button type="submit" name="add-to-cart" value="' . esc_attr($product->get_id()) . '" class="single_add_to_cart_button button alt">' . esc_html($product->single_add_to_cart_text()) . '</button>';
-                    echo '<button type="button" class="buy-now-button">' . esc_html__('Buy now', 'woocommerce') . '</button>';
-                    echo '</div>';
+                    // Add to cart button group
+echo '<div class="button-group">';
+echo '<button type="submit" name="add-to-cart" value="' . esc_attr($product->get_id()) . '" class="single_add_to_cart_button button alt">' . esc_html($product->single_add_to_cart_text()) . '</button>';
+echo '</div>';
                     
                     echo '</form>';
                 } else {
