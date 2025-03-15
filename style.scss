@@ -822,6 +822,97 @@ ul.products {
 //     }
 // }
 
+//woocommerce tracking page css
+.woocommerce-form.woocommerce-form-track-order.track_order {
+    max-width: 480px; /* Limit width for better mobile readability */
+    margin: 20px auto; /* Center the form */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .woocommerce-form.woocommerce-form-track-order.track_order p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+    font-size: 1rem;
+  }
+  
+  .woocommerce-form.woocommerce-form-track-order.track_order label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.95rem;
+  }
+  
+  .woocommerce-form.woocommerce-form-track-order.track_order input.input-text {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't increase input width */
+    font-size: 1rem;
+  }
+  
+  .woocommerce-form.woocommerce-form-track-order.track_order input.input-text:focus {
+    border-color: #007bff; /* Example focus color */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Example focus shadow */
+  }
+  
+  .woocommerce-form.woocommerce-form-track-order.track_order p.form-row-first,
+  .woocommerce-form.woocommerce-form-track-order.track_order p.form-row-last {
+    width: 100%; /* Make the input fields full width on mobile */
+    margin-right: 0; /* Remove default right margin */
+  }
+  
+  .woocommerce-form.woocommerce-form-track-order.track_order p.form-row .button {
+    display: block; /* Make the button full width */
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50; /* Example button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .woocommerce-form.woocommerce-form-track-order.track_order p.form-row .button:hover {
+    background-color: #45a049;
+  }
+  
+  .woocommerce-form.woocommerce-form-track-order.track_order .clear {
+    clear: both; /* Ensure proper clearing of floats (though not strictly needed here with full-width elements) */
+  }
+  
+  /* Optional: Adjust font size for smaller screens */
+  @media (max-width: 576px) {
+    .woocommerce-form.woocommerce-form-track-order.track_order {
+      padding: 15px;
+    }
+    .woocommerce-form.woocommerce-form-track-order.track_order p {
+      font-size: 0.95rem;
+    }
+    .woocommerce-form.woocommerce-form-track-order.track_order label {
+      font-size: 0.9rem;
+    }
+    .woocommerce-form.woocommerce-form-track-order.track_order input.input-text {
+      padding: 8px;
+      font-size: 0.95rem;
+    }
+    .woocommerce-form.woocommerce-form-track-order.track_order p.form-row .button {
+      padding: 10px;
+      font-size: 1rem;
+    }
+  }
+
+  //end of tracking page css
+
 
 /* Global Custom Breadcrumb */
 .custom-breadcrumb {
@@ -1235,3 +1326,8 @@ ul.products {
   .wc-block-components-panel__button-icon {
     margin-right: 5px;
   }
+
+
+
+
+
