@@ -2,26 +2,26 @@
   "promotional_banners": {
     "left_banner": {
       "desktop": {
-        "image": "https://fakeimg.pl/600x256?font=noto-serif",
-        "alt": "Shop Women's Collection - Up to 40% Off",
-        "link": "/shop/womens-collection"
+        "image": "https://image.excellink.lk/1.png",
+        "alt": "Bake Like a Pro with Our Premium Tools!",
+        "link": "/shop/"
       },
       "mobile": {
-        "image": "https://fakeimg.pl/600x256?font=noto-serif",
-        "alt": "Women's Collection Sale Mobile",
+        "image": "https://image.excellink.lk/1.png",
+        "alt": "Bake Like a Pro with Our Premium Tools!",
         "link": "/shop/womens-collection"
       }
     },
     "right_banner": {
       "desktop": {
-        "image": "https://fakeimg.pl/600x256?font=noto-serif",
-        "alt": "New Men's Arrivals - Summer Collection",
-        "link": "/shop/mens-collection"
+        "image": "https://image.excellink.lk/4.png",
+        "alt": "Explore Our Nozzles for Gorgeous Cake Decorations.",
+        "link": "/shop"
       },
       "mobile": {
-        "image": "https://fakeimg.pl/600x256?font=noto-serif",
-        "alt": "Men's Summer Collection Mobile",
-        "link": "/shop/mens-collection"
+        "image": "https://image.excellink.lk/4.png",
+        "alt": "Explore Our Nozzles for Gorgeous Cake Decorations.",
+        "link": "/shop"
       }
     }
   }
