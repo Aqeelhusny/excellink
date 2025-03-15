@@ -13048,4 +13048,36 @@ div[style*="font-size: 13px; color: #8e8e8e; font-weight:bold"] {
 
 .woocommerce-breadcrumb a:hover {
   text-decoration: underline;
+}
+
+/* Mobile Responsive Styles (mobile-styles.css) */
+/* Mobile First Approach - Applies to all screens and then adjusts for larger screens */
+@media screen and (max-width: 991px) {
+  /* Layout Adjustments */
+  .summary.entry-summary {
+    padding: 0 15px;
+  }
+  /* Product Title */
+  .product_title {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  /* Mobile Tabs */
+  .wc-tabs {
+    flex-direction: column;
+    gap: 5px;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .wc-tabs li {
+    width: 100%;
+  }
+  .wc-tabs li a {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--light-gray);
+    text-align: center;
+  }
+  .wc-tabs li.active a {
+    background-color: var(--primary-color);
+  }
 }/*# sourceMappingURL=style.css.map */
