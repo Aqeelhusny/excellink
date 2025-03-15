@@ -12560,4 +12560,319 @@ ul.products {
 
 a.add-to-cart-btn-cs, .added_to_cart.wc-forward {
   text-decoration: none;
+}
+
+/* Overall cart container styling */
+.wp-block-woocommerce-cart {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+/* Cart layout improvements */
+.wc-block-components-sidebar-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.wc-block-cart__main {
+  flex: 1 1 65%;
+  min-width: 320px;
+}
+
+.wc-block-cart__sidebar {
+  flex: 1 1 30%;
+  min-width: 300px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  align-self: flex-start;
+  position: sticky;
+  top: 20px;
+}
+
+/* Cart table styling */
+.wc-block-cart-items {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.wc-block-cart-items th {
+  background-color: #f0f0f0;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+}
+
+.wc-block-cart-items td {
+  padding: 15px;
+  vertical-align: middle;
+  border-bottom: 1px solid #eee;
+}
+
+.wc-block-cart-items__row:last-child td {
+  border-bottom: none;
+}
+
+/* Product details styling */
+.wc-block-cart-item__product {
+  display: flex;
+  flex-direction: column;
+}
+
+.wc-block-components-product-name {
+  color: #2c3e50;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+.wc-block-components-product-name:hover {
+  color: #3498db;
+}
+
+.wc-block-cart-item__image img {
+  max-width: 80px;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Product price styling */
+.wc-block-components-product-price {
+  display: block;
+  margin: 8px 0;
+}
+
+.wc-block-components-product-price__regular {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.wc-block-components-product-price__value {
+  font-weight: 600;
+  color: #333;
+}
+
+.wc-block-components-product-price__value.is-discounted {
+  color: #e74c3c;
+}
+
+/* Sale badge styling */
+.wc-block-components-sale-badge {
+  display: inline-block;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+/* Quantity selector styling */
+.wc-block-components-quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px 0;
+}
+
+.wc-block-components-quantity-selector__input {
+  width: 40px;
+  border: none;
+  padding: 5px;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.wc-block-components-quantity-selector__input::-webkit-inner-spin-button,
+.wc-block-components-quantity-selector__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wc-block-components-quantity-selector__button {
+  background: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  transition: background-color 0.2s;
+}
+
+.wc-block-components-quantity-selector__button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.wc-block-components-quantity-selector__button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Remove item link */
+.wc-block-cart-item__remove-link {
+  background: none;
+  border: none;
+  color: #999;
+  text-decoration: underline;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 8px;
+  transition: color 0.2s;
+}
+
+.wc-block-cart-item__remove-link:hover {
+  color: #e74c3c;
+}
+
+/* Cart totals styling */
+.wc-block-cart__totals-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.wc-block-components-totals-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.wc-block-components-totals-footer-item {
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 2px solid #eee;
+}
+
+.wc-block-components-totals-footer-item .wc-block-components-totals-item__value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Shipping options styling */
+.wc-block-components-radio-control__option {
+  display: block;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.wc-block-components-radio-control__option:hover {
+  border-color: #3498db;
+}
+
+.wc-block-components-radio-control__option-checked {
+  border-color: #3498db;
+  background-color: #f8f9ff;
+}
+
+.wc-block-components-radio-control__input {
+  margin-right: 10px;
+}
+
+/* Checkout button styling */
+.wc-block-cart__submit-container {
+  margin-top: 20px;
+}
+
+.wc-block-cart__submit-button {
+  display: block;
+  width: 100%;
+  background-color: #27ae60;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  text-decoration: none;
+}
+
+.wc-block-cart__submit-button:hover {
+  background-color: #2ecc71;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .wc-block-components-sidebar-layout {
+    flex-direction: column;
+  }
+  .wc-block-cart-items {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .wc-block-cart-item__image img {
+    max-width: 60px;
+  }
+  .wc-block-cart__sidebar {
+    position: static;
+    margin-top: 30px;
+  }
+  .wc-block-cart-items th:not(.wc-block-cart-items__header-product),
+  .wc-block-cart-items td:not(.wc-block-cart-item__product) {
+    display: none;
+  }
+  .wc-block-cart-items td.wc-block-cart-item__product {
+    display: flex;
+    flex-direction: column;
+  }
+  .wc-block-cart-item__total {
+    display: block !important;
+    text-align: right;
+    padding-top: 0;
+  }
+  .wc-block-cart-item__image {
+    display: block !important;
+    padding-bottom: 0;
+  }
+}
+/* Coupon form styling */
+.wc-block-components-panel__button {
+  background: none;
+  border: 1px dashed #ddd;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  color: #3498db;
+  font-size: 14px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.wc-block-components-panel__button:hover {
+  border-color: #3498db;
+  background-color: #f8f9ff;
+}
+
+.wc-block-components-panel__button-icon {
+  margin-right: 5px;
 }/*# sourceMappingURL=style.css.map */
