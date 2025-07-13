@@ -109,7 +109,7 @@
                 Since 1988 - <?php echo date('Y'); ?>. © <a href="https://excellink.lk">Excellink</a>. All right reserved.
             </div>
             <div class="col-md-6 text-center text-md-end">
-                <div class="d-inline-flex">
+                <div class="d-inline-flex justify-content-between">
                     <i class="bi bi-credit-card"></i>
                     <img src="https://static.mintpay.lk/static/base/logo/mintpay-pill.png" alt="Mintpay" height="30" class="me-2">
                     <i class="bi bi-cash"></i>
