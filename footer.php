@@ -110,7 +110,7 @@
             </div>
             <div class="col-md-6 text-center text-md-end">
                 <div class="d-inline-flex justify-content-between">
-                    <i class="bi bi-credit-card"></i>
+                    <img src="/assets/icons/visa-classic-svgrepo-com.svg" alt="Visa" height="30" class="me-2">
                     <img src="https://static.mintpay.lk/static/base/logo/mintpay-pill.png" alt="Mintpay" height="30" class="me-2">
                     <i class="bi bi-cash"></i>
                 </div>

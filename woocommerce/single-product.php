@@ -258,7 +258,7 @@ endif; ?>
                     <i class="icon shipping-icon"></i>
                     <div class="info-content">
                         <h4><?php echo esc_html__('Shipping', 'woocommerce'); ?></h4>
-                        <p><?php echo esc_html__('Free delivery for orders over $50. Orders ship same day if placed by 2pm.', 'woocommerce'); ?></p>
+                        <p><?php echo esc_html__('Free delivery for orders over LKR 5000. Orders ship same day if placed by 12Noon.', 'woocommerce'); ?></p>
                     </div>
                 </div>
                 
