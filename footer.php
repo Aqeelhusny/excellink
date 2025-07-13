@@ -42,7 +42,9 @@
                     <i class="fas fa-phone-alt me-2"></i>
                     <div>
                         <div class="small text-muted">Monday-Friday: 08:00am - 04:30pm</div>
-                        <div class="fw-bold">+94 11 711 4522</div>
+                        <div class="fw-bold">
+                            <a href="tel:+94117114522">+94 11 711 4522 </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -57,10 +59,10 @@
                     <p class="mb-2">Follow us on social media:</p>
                     <div class="d-flex">
                         <a href="fb.com/excellink.lk" class="me-2 btn btn-sm btn-outline-secondary rounded-circle">
-                            <i class="fab fa-facebook-f"></i>
+                            <i class="bi bi-facebook"></i>
                         </a>
                         <a href="ig.com/excellink.lk" class="me-2 btn btn-sm btn-outline-secondary rounded-circle">
-                            <i class="fab fa-instagram"></i>
+                            <i class="bi bi-instagram"></i>
                         </a>
                     </div>
                 </div>
@@ -104,13 +106,12 @@
     <div class="container pb-4">
         <div class="row align-items-center">
             <div class="col-md-6 small text-center text-md-start mb-3 mb-md-0">
-                Since 1998 - <?php echo date('Y'); ?>. © <a href="http://excellink.lk">Excellink</a>. All right reserved.
+                Since 1988 - <?php echo date('Y'); ?>. © <a href="https://excellink.lk">Excellink</a>. All right reserved.
             </div>
             <div class="col-md-6 text-center text-md-end">
                 <div class="d-inline-flex">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa" height="30" class="me-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="MasterCard" height="30" class="me-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="Mintpay" height="30" class="me-2">
+                    <i class="bi bi-credit-card"></i>
+                    <img src="https://static.mintpay.lk/static/base/logo/mintpay-pill.png" alt="Mintpay" height="30" class="me-2">
                     <i class="bi bi-cash"></i>
                 </div>
             </div>
