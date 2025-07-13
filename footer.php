@@ -36,7 +36,7 @@
         <div class="row">
             <!-- Help Column -->
             <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
-                <img src="https://excellink.lk/wp-content/themes/excellink/public/images/excellogo.png" alt="exceellogo" class="img-fluid mb-3">>
+                <img src="https://excellink.lk/wp-content/themes/excellink/public/images/excellogo.png" alt="exceellogo" class="img-fluid mb-3">
                 
                 <div class="d-flex align-items-center mb-3">
                     <i class="fas fa-phone-alt me-2"></i>
@@ -64,21 +64,6 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Make Money Column -->
-            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
-                <h5 class="mb-3">Make Money with Us</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Sell on Grogin</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Sell Your Services on Grogin</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Sell on Grogin Business</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Sell Your Apps on Grogin</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Become an Affiliate</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Advertise Your Products</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Self-Publish with Us</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Become an Blowwe Vendor</a></li>
-                </ul>
             </div>
             
             <!-- Let Us Help Column -->
@@ -125,7 +110,8 @@
                 <div class="d-inline-flex">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa" height="30" class="me-2">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="MasterCard" height="30" class="me-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="PayPal" height="30" class="me-2">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="Mintpay" height="30" class="me-2">
+                    <i class="bi bi-cash"></i>
                 </div>
             </div>
         </div>
