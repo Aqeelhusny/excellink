@@ -16,8 +16,8 @@
     <div class="container mb-4">
         <div class="row align-items-center">
             <div class="col-md-5">
-                <h4>Join our newsletter for £10 offs</h4>
-                <p class="text-muted small">Register now to get latest updates on promotions & coupons.Don't worry, we not spam!</p>
+                <h4>Join our newsletter</h4>
+                <p class="text-muted small">Register now to get latest updates on promotions & coupons. Don't worry, we not spam!</p>
             </div>
             <div class="col-md-7">
                 <div class="input-group">
@@ -36,14 +36,13 @@
         <div class="row">
             <!-- Help Column -->
             <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
-                <h5 class="mb-3">Do You Need Help?</h5>
-                <p class="small">Autoseligen syr. Nek diaräsk fröbomba. Nör antipol kynoda nynat. Pressa fämöska.</p>
+                <img src="https://excellink.lk/wp-content/themes/excellink/public/images/excellogo.png" alt="exceellogo" class="img-fluid mb-3">>
                 
                 <div class="d-flex align-items-center mb-3">
                     <i class="fas fa-phone-alt me-2"></i>
                     <div>
-                        <div class="small text-muted">Monday-Friday: 08am-5pm</div>
-                        <div class="fw-bold">0 800 300-353</div>
+                        <div class="small text-muted">Monday-Friday: 08:00am - 04:30pm</div>
+                        <div class="fw-bold">+94 11 711 4522</div>
                     </div>
                 </div>
                 
@@ -51,23 +50,17 @@
                     <i class="fas fa-envelope me-2"></i>
                     <div>
                         <div class="small text-muted">Need help with your order?</div>
-                        <div>info@example.com</div>
+                        <div>info@excellink.lk</div>
                     </div>
                 </div>
 				<div>
                     <p class="mb-2">Follow us on social media:</p>
                     <div class="d-flex">
-                        <a href="#" class="me-2 btn btn-sm btn-outline-secondary rounded-circle">
+                        <a href="fb.com/excellink.lk" class="me-2 btn btn-sm btn-outline-secondary rounded-circle">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="me-2 btn btn-sm btn-outline-secondary rounded-circle">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="me-2 btn btn-sm btn-outline-secondary rounded-circle">
+                        <a href="ig.com/excellink.lk" class="me-2 btn btn-sm btn-outline-secondary rounded-circle">
                             <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary rounded-circle">
-                            <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
                 </div>
