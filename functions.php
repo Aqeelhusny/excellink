@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.0.3' );
 }
 
 /**
@@ -140,7 +140,7 @@ add_action( 'widgets_init', 'excellink_store_widgets_init' );
 function excellink_store_scripts() {
 	// wp_enqueue_style( 'excellink-store-style', get_stylesheet_uri(), array(), _S_VERSION );
 	// wp_style_add_data( 'excellink-store-style', 'rtl', 'replace' );
-    wp_enqueue_style('excellink-store-style', get_template_directory_uri() . '/style.min.css', array(), time(), 'all');
+    wp_enqueue_style('excellink-store-style', get_template_directory_uri() . '/style.css', array(), time(), 'all');
     wp_enqueue_style( 'bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css');
 	// wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js');
     wp_enqueue_script('bootstrap-js','https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js',array('jquery'),'5.3.0',true);
