@@ -112,8 +112,7 @@
         <?php echo do_shortcode('[sale_products per_page="12" columns="6" visibility="visible" orderby="rand"]'); ?>
     </section>
 
-    <section class="container my-5">
-        <!-- sale banner section -->
+    <!-- <section class="container my-5"> remove section banner area 3 layer banner
         <div class="row row-gap-3">
             <div class="col-12 col-md-4">
                 <a
@@ -149,7 +148,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="container mb-5">
         <h2 class="text-center">Best Sellers</h2>
