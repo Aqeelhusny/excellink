@@ -12410,8 +12410,8 @@ textarea.form-control-lg {
 
 /* Apply Bootstrap Grid to WooCommerce product lists */
 ul.products {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
   justify-content: center;
   row-gap: 12px;
   -moz-column-gap: 6px;
@@ -12480,9 +12480,9 @@ ul.products {
 
 /* Ensure Bootstrap columns work properly in WooCommerce */
 .woocommerce ul.products {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
 }
 
 .woocommerce-form.woocommerce-form-track-order.track_order {

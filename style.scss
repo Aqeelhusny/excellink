@@ -579,8 +579,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Apply Bootstrap Grid to WooCommerce product lists */
 ul.products {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
   justify-content: center;
   row-gap: 12px;
   column-gap: 6px;
@@ -656,11 +656,11 @@ ul.products {
 
 /* Ensure Bootstrap columns work properly in WooCommerce */
 .woocommerce ul.products {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   // margin-right: -10px;
   // margin-left: -10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
 }
 
 // /* Custom product card styling */
@@ -1358,11 +1358,11 @@ a.add-to-cart-btn-cs,
 }
 
 //shop page
-div.shop-toolbar.custom-shop-toolbar p.woocommerce-result-count{
-  margin-right:auto;
+div.shop-toolbar.custom-shop-toolbar p.woocommerce-result-count {
+  margin-right: auto;
 }
 
-div.shop-toolbar.custom-shop-toolbar .woocommerce-ordering{
-  margin-left:auto;
+div.shop-toolbar.custom-shop-toolbar .woocommerce-ordering {
+  margin-left: auto;
   margin-bottom: 0px;
-} 
+}
