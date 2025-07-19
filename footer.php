@@ -33,9 +33,9 @@
     
     <!-- Main Footer Content -->
     <div class="container py-4">
-        <div class="row">
+        <div class="row justify-content-between">
             <!-- Help Column -->
-            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <img src="https://excellink.lk/wp-content/themes/excellink/public/images/excellogo.png" alt="exceellogo" class="img-fluid mb-3">
                 
                 <div class="d-flex align-items-center mb-3">
@@ -83,6 +83,22 @@
                     <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Help Center</a></li>
                 </ul>
             </div>
+
+            <!-- Let Us Help Column -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+                <h5 class="mb-3">Let Us Help You</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Accessibility Statement</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Your Orders</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Returns & Replacements</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Shipping Rates & Policies</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Refund and Returns Policy</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Privacy Policy</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Terms and Conditions</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Cookie Settings</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Help Center</a></li>
+                </ul>
+            </div>
             
             <!-- Get to Know Column -->
             <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
@@ -103,16 +119,12 @@
     <hr class="my-4">
     
     <!-- Footer Bottom -->
-    <div class="container pb-2">
+    <div class="container pb-4">
         <div class="row align-items-center">
             <div class="col-md-6 small text-center text-md-start mb-3 mb-md-0">
                 Since 1988 - <?php echo date('Y'); ?>. © <a href="https://excellink.lk">Excellink</a>. All right reserved.
             </div>
             <div class="col-md-6 text-center text-md-end">
-                <!-- <div class="d-inline-flex justify-content-between">
-                    <img src="/assets/icons/visa-classic-svgrepo-com.svg" alt="Visa" height="30" class="me-2">
-                    <img src="https://static.mintpay.lk/static/base/logo/mintpay-pill.png" alt="Mintpay" height="30" class="me-2">
-                    <i class="bi bi-cash"></i> -->
                     <div class="col text-center text-md-end">
                 <a href="#" class="text-decoration-none text-secondary small me-3">Terms and Conditions</a>
                 <a href="#" class="text-decoration-none text-secondary small me-3">Privacy Policy</a>
@@ -121,13 +133,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="row mt-3">
-            <div class="col text-center text-md-end">
-                <a href="#" class="text-decoration-none text-secondary small me-3">Terms and Conditions</a>
-                <a href="#" class="text-decoration-none text-secondary small me-3">Privacy Policy</a>
-                <a href="#" class="text-decoration-none text-secondary small">Order Tracking</a>
-            </div>
-        </div> -->
     </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
