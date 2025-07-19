@@ -24,7 +24,7 @@ get_header('shop');
 
     <div class="grocery-shop-container">
         <!-- Sidebar / Filter Column -->
-        <div class="shop-sidebar" id="shopSidebar">
+        <div class="shop-sidebar stickysidebar" id="shopSidebar">
             <div class="sidebar-header d-md-none">
                 <h3>Filters</h3>
                 <button class="close-sidebar">&times;</button>
@@ -44,9 +44,9 @@ get_header('shop');
                             value="<?php echo isset($_GET['max_price']) ? esc_attr($_GET['max_price']) : ''; ?>">
                     </div>
                 </div>
-                <div class="price-slider-wrapper">
+                <!-- <div class="price-slider-wrapper"> not configured yet
                     <div class="price-slider"></div>
-                </div>
+                </div> -->
             </div>
 
             <div class="sidebar-section widget-categories">
