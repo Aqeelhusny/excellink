@@ -27,7 +27,7 @@
         <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'excellink-store'); ?></a>
 
         <div class="header-top">
-            <p class="container mb-0 text-capitalize">welcome to srilanka</p>
+            <p class="container mb-0 text-capitalize">Srilanka No.1 Largest Cake Decor Store | Limited offers | Free Shipping Orders LKR 5000/-</p>
         </div>
         
         <header id="masthead" class="site-header sticky-top">
