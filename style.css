@@ -12997,7 +12997,7 @@ div.shop-toolbar.custom-shop-toolbar .woocommerce-ordering {
   margin-bottom: 0px;
 }
 
-div.shop-sidebar .stickysidebar {
+div.shop-sidebar.stickysidebar {
   position: sticky;
   top: 0;
 }/*# sourceMappingURL=style.css.map */
