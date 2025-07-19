@@ -12333,6 +12333,11 @@ textarea.form-control-lg {
   margin: 0 0 8px;
   line-height: 1.3;
   font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .custom-product-title a {
@@ -12472,8 +12477,7 @@ ul.products {
 .woocommerce ul.products {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -10px;
-  margin-left: -10px;
+  justify-content: space-between;
 }
 
 .woocommerce-form.woocommerce-form-track-order.track_order {

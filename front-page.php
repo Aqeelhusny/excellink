@@ -151,8 +151,6 @@
         </div>
     </section>
 
-
-
     <section class="container mb-5">
         <h2 class="text-center">Best Sellers</h2>
         <p class="text-center">
