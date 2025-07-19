@@ -103,17 +103,17 @@
     <hr class="my-4">
     
     <!-- Footer Bottom -->
-    <div class="container pb-4">
+    <div class="container pb-2">
         <div class="row align-items-center">
             <div class="col-md-6 small text-center text-md-start mb-3 mb-md-0">
                 Since 1988 - <?php echo date('Y'); ?>. © <a href="https://excellink.lk">Excellink</a>. All right reserved.
             </div>
-            <div class="col-md-6 text-center text-md-end">
+            <!-- <div class="col-md-6 text-center text-md-end">
                 <div class="d-inline-flex justify-content-between">
                     <img src="/assets/icons/visa-classic-svgrepo-com.svg" alt="Visa" height="30" class="me-2">
                     <img src="https://static.mintpay.lk/static/base/logo/mintpay-pill.png" alt="Mintpay" height="30" class="me-2">
                     <i class="bi bi-cash"></i>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="row mt-3">

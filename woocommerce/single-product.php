@@ -232,7 +232,7 @@ endif; ?>
                         </a>
                     <?php } ?>
                 </div>
-                <div class="action-item">
+                <div class="action-item align-content-start">
                     <a href="#" class="share-product">
                         <i class="icon share-icon"></i>
                         <span><?php echo esc_html__('Share this Product', 'woocommerce'); ?></span>
