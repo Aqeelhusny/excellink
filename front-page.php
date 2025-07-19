@@ -159,7 +159,7 @@
         <?php echo do_shortcode( '[products limit="12" columns="6" best_selling="true" ]' ); ?>
     </section>
 
-    <section class="container">
+    <!-- <section class="container"> this section not yet completd on frontend product load more buttion
         <h2 class="text-center">Just For You</h2>
         <p class="text-center">Essencials choosen for you</p>
         <div class="woocommerce">
@@ -172,7 +172,7 @@
                 Load More Products
             </button>
         </div>
-    </section>
+    </section> -->
 
 </main>
 
