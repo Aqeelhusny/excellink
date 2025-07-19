@@ -13,9 +13,8 @@
 // }
 
 if ( ! defined( '_S_VERSION' ) ) {
-	$git_version = trim( shell_exec( 'git rev-parse --short HEAD' ) );
-    $style_path = get_template_directory() . '/style.css';
-	define( '_S_VERSION', $git_version ? $git_version : file_exists( $style_path ) ? filemtime( $style_path ) );
+	$style_path = get_template_directory() . '/style.css';
+	define( '_S_VERSION', file_exists( $style_path ) ? filemtime( $style_path ) : '1.0.3' );
 }
 /**
  * Sets up theme defaults and registers support for various WordPress features.
