@@ -12983,4 +12983,13 @@ a.add-to-cart-btn-cs,
   flex: 1 1 auto;
   width: auto;
   min-width: 0;
+}
+
+div.shop-toolbar.custom-shop-toolbar p.woocommerce-result-count {
+  margin-right: auto;
+}
+
+div.shop-toolbar.custom-shop-toolbar .woocommerce-ordering {
+  margin-left: auto;
+  margin-bottom: 0px;
 }/*# sourceMappingURL=style.css.map */
