@@ -36,7 +36,7 @@
         <div class="row justify-content-between">
             <!-- Help Column -->
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <img src="https://excellink.lk/wp-content/themes/excellink/public/images/excellogo.png" alt="exceellogo" class="img-fluid mb-3">
+                <img src="https://excellink.lk/wp-content/themes/excellink/public/images/excellogo.png" alt="exceellogo" class="img-fluid mb-3" width="70%">
                 
                 <div class="d-flex align-items-center mb-3">
                     <i class="fas fa-phone-alt me-2"></i>
