@@ -128,7 +128,7 @@ get_header('shop');
             do_action('woocommerce_archive_description');
             ?>
 
-            <div class="shop-toolbar">
+            <div class="shop-toolbar custom-shop-toolbar">
                 <?php
                 /**
                  * Hook: woocommerce_before_shop_loop.
