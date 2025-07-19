@@ -108,21 +108,26 @@
             <div class="col-md-6 small text-center text-md-start mb-3 mb-md-0">
                 Since 1988 - <?php echo date('Y'); ?>. © <a href="https://excellink.lk">Excellink</a>. All right reserved.
             </div>
-            <!-- <div class="col-md-6 text-center text-md-end">
-                <div class="d-inline-flex justify-content-between">
+            <div class="col-md-6 text-center text-md-end">
+                <!-- <div class="d-inline-flex justify-content-between">
                     <img src="/assets/icons/visa-classic-svgrepo-com.svg" alt="Visa" height="30" class="me-2">
                     <img src="https://static.mintpay.lk/static/base/logo/mintpay-pill.png" alt="Mintpay" height="30" class="me-2">
-                    <i class="bi bi-cash"></i>
-                </div> -->
+                    <i class="bi bi-cash"></i> -->
+                    <div class="col text-center text-md-end">
+                <a href="#" class="text-decoration-none text-secondary small me-3">Terms and Conditions</a>
+                <a href="#" class="text-decoration-none text-secondary small me-3">Privacy Policy</a>
+                <a href="#" class="text-decoration-none text-secondary small">Order Tracking</a>
+            </div>
+                </div>
             </div>
         </div>
-        <div class="row mt-3">
+        <!-- <div class="row mt-3">
             <div class="col text-center text-md-end">
                 <a href="#" class="text-decoration-none text-secondary small me-3">Terms and Conditions</a>
                 <a href="#" class="text-decoration-none text-secondary small me-3">Privacy Policy</a>
                 <a href="#" class="text-decoration-none text-secondary small">Order Tracking</a>
             </div>
-        </div>
+        </div> -->
     </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
