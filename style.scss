@@ -640,8 +640,8 @@ ul.products {
 @media (max-width: 446.98px) {
   .custom-product-card {
     padding: 10px;
-    /* Keep the same width on mobile but adjust other properties */
-    width: 195px;
+    /* Keep the sa5me width on mobile but adjust other properties */
+    width: calc(30vw + 65px)
   }
 }
 
