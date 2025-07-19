@@ -62,7 +62,7 @@
 
     <div class="container">
         <div class="row">
-            <h2 class="text-center">New Arrivals</h2>
+            <h2 class="text-center headtitle">New Arrivals</h2>
             <p class="text-center">Grab the latest decorative collection</p>
             <?php echo do_shortcode( '[products limit="12" columns="6" orderby="id" order="DESC" visibility="visible"]' ); ?>
         </div>
@@ -100,14 +100,14 @@
 
     <section class="container mb-5">
         <div class="row">
-            <h1 class="text-center">Featured Products</h1>
+            <h1 class="text-center headtitle">Featured Products</h1>
             <p class="text-center">Limited featured products</p>
             <?php echo do_shortcode('[featured_products per_page="12" columns="6" visibility="visible"]'); ?>
         </div>
     </section>
 
-    <section class="container">
-        <h2 class="text-center">On Sale</h2>
+    <section class="container mb-5">
+        <h2 class="text-center headtitle">On Sale</h2>
         <p class="text-center">Limited Sale Collection</p>
         <?php echo do_shortcode('[sale_products per_page="12" columns="6" visibility="visible" orderby="rand"]'); ?>
     </section>
