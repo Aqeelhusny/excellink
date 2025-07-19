@@ -24,7 +24,7 @@ get_header('shop');
 
     <div class="grocery-shop-container">
         <!-- Sidebar / Filter Column -->
-        <div class="shop-sidebar stickysidebar" id="shopSidebar">
+        <div class="shop-sidebar" id="shopSidebar">
             <div class="sidebar-header d-md-none">
                 <h3>Filters</h3>
                 <button class="close-sidebar">&times;</button>
@@ -73,43 +73,34 @@ get_header('shop');
             </div>
 
             <div class="sidebar-section widget-stock-status">
-    <h3 class="sidebar-title"><?php esc_html_e('Filter by Stock', 'woocommerce'); ?></h3>
-    <ul class="stock-status-list">
-        <li>
-            <label class="stock-status-radio">
-                <input type="radio" name="stock_status" value="instock"
-                    <?php checked(isset($_GET['stock_status']) && $_GET['stock_status'] === 'instock'); ?>>
-                <span class="status-indicator in-stock"></span>
-                <?php esc_html_e('In Stock', 'woocommerce'); ?>
-            </label>
-        </li>
-        <li>
-            <label class="stock-status-radio">
-                <input type="radio" name="stock_status" value="outofstock"
-                    <?php checked(isset($_GET['stock_status']) && $_GET['stock_status'] === 'outofstock'); ?>>
-                <span class="status-indicator out-of-stock"></span>
-                <?php esc_html_e('Out of Stock', 'woocommerce'); ?>
-            </label>
-        </li>
-        <li>
-            <label class="stock-status-radio">
-                <input type="radio" name="stock_status" value="onbackorder"
-                    <?php checked(isset($_GET['stock_status']) && $_GET['stock_status'] === 'onbackorder'); ?>>
-                <span class="status-indicator on-backorder"></span>
-                <?php esc_html_e('On Backorder', 'woocommerce'); ?>
-            </label>
-        </li>
-        <li>
-            <label class="stock-status-radio">
-                <input type="radio" name="stock_status" value=""
-                    <?php checked(!isset($_GET['stock_status']) || $_GET['stock_status'] === ''); ?>>
-                <span class="status-indicator all-stock"></span>
-                <?php esc_html_e('All Stock Statuses', 'woocommerce'); ?>
-            </label>
-        </li>
-    </ul>
-</div>
-
+                <h3 class="sidebar-title"><?php esc_html_e('Filter by Stock', 'woocommerce'); ?></h3>
+                <ul class="stock-status-list">
+                    <li>
+                        <label class="stock-status-checkbox">
+                            <input type="checkbox" name="stock_status" value="instock"
+                                <?php checked(isset($_GET['stock_status']) && in_array('instock', (array)$_GET['stock_status'])); ?>>
+                            <span class="status-indicator in-stock"></span>
+                            <?php esc_html_e('In Stock', 'woocommerce'); ?>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="stock-status-checkbox">
+                            <input type="checkbox" name="stock_status" value="outofstock"
+                                <?php checked(isset($_GET['stock_status']) && in_array('outofstock', (array)$_GET['stock_status'])); ?>>
+                            <span class="status-indicator out-of-stock"></span>
+                            <?php esc_html_e('Out of Stock', 'woocommerce'); ?>
+                        </label>
+                    </li>
+                    <!-- <li>
+                        <label class="stock-status-checkbox">
+                            <input type="checkbox" name="stock_status[]" value="onbackorder"
+                                <?php checked(isset($_GET['stock_status']) && in_array('onbackorder', (array)$_GET['stock_status'])); ?>>
+                            <span class="status-indicator on-backorder"></span>
+                            <?php esc_html_e('On Backorder', 'woocommerce'); ?>
+                        </label>
+                    </li> -->
+                </ul>
+            </div>
 
             <div class="sidebar-section filter-actions">
                 <button class="filter-all-btn"><?php esc_html_e('Apply Filters', 'woocommerce'); ?></button>
