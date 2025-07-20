@@ -580,7 +580,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Apply Bootstrap Grid to WooCommerce product lists */
 ul.products {
   display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(185px, 2fr));
   justify-content: center;
   row-gap: 12px;
   column-gap: 6px;
