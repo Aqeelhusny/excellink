@@ -14,7 +14,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	$style_path = get_template_directory() . '/style.css';
-	define( '_S_VERSION', file_exists( $style_path ) ? filemtime( $style_path ) : '1.0.3' );
+	define( '_S_VERSION', file_exists( $style_path ) ? filemtime( $style_path ) : '1.0.4' );
 }
 /**
  * Sets up theme defaults and registers support for various WordPress features.
