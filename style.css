@@ -12411,7 +12411,6 @@ textarea.form-control-lg {
 /* Apply Bootstrap Grid to WooCommerce product lists */
 ul.products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
   justify-content: center;
   row-gap: 12px;
   -moz-column-gap: 6px;
