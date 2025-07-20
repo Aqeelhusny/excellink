@@ -580,7 +580,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Apply Bootstrap Grid to WooCommerce product lists */
 ul.products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(185px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 2fr));
   justify-content: center;
   row-gap: 12px;
   column-gap: 6px;
@@ -641,7 +641,8 @@ ul.products {
   .custom-product-card {
     padding: 10px;
     /* Keep the sa5me width on mobile but adjust other properties */
-    width: 185px;
+    width: 100%;
+    max-width: 170px;
   }
 }
 
@@ -660,7 +661,7 @@ ul.products {
   // margin-right: -10px;
   // margin-left: -10px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(185px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 2fr));
 }
 
 // /* Custom product card styling */
