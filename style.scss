@@ -660,7 +660,7 @@ ul.products {
   // margin-right: -10px;
   // margin-left: -10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(185px, 2fr));
 }
 
 // /* Custom product card styling */
