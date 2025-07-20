@@ -84,6 +84,13 @@ get_header( 'shop' ); ?>
             
             <div class="product-description">
                 <?php 
+                //product avaibalty status 
+                echo '<div class="custom-add-to-cart">';
+                if ( $product->is_in_stock() ) {
+                    echo '<div class="stock-status in-stock"><span class="status-text">In Stock</span></div>';
+                } else {
+                    echo '<div class="stock-status out-of-stock"><span class="status-text">Out of Stock</span></div>';
+                }
                 // Custom short description template with icon
                 if ( $product->get_short_description() ) {
                     echo '<div class="short-description">';
@@ -107,12 +114,7 @@ get_header( 'shop' ); ?>
             
             <?php 
             // Custom add to cart section
-            echo '<div class="custom-add-to-cart">';
-                if ( $product->is_in_stock() ) {
-                    echo '<div class="stock-status in-stock"><span class="status-text">In Stock</span></div>';
-                } else {
-                    echo '<div class="stock-status out-of-stock"><span class="status-text">Out of Stock</span></div>';
-                }
+            
                 
                 // Add to cart form
                 if ( $product->is_type( 'simple' ) ) {
@@ -200,7 +202,7 @@ get_header( 'shop' ); ?>
     <div class="product-tabs">
         <div class="tabs-header">
             <button class="tab-button active" data-tab="description">Description</button>
-            <button class="tab-button" data-tab="reviews">Reviews (<?php echo $product->get_review_count(); ?>)</button>
+            <!-- <button class="tab-button" data-tab="reviews">Reviews (<?php echo $product->get_review_count(); ?>)</button> -->
         </div>
         
         <div class="tab-content active" id="description-tab">
@@ -209,14 +211,19 @@ get_header( 'shop' ); ?>
             </div>
         </div>
         
-        <div class="tab-content" id="reviews-tab">
+        <!-- <div class="tab-content" id="reviews-tab">
             <div class="reviews-content">
                 <?php comments_template(); ?>
             </div>
-        </div>
+        </div> -->
     </div>
     
-    <?php woocommerce_output_related_products(); ?>
+    <?php
+        woocommerce_related_products(array(
+            'posts_per_page' => 5, // Number of related products
+            'columns' => 5,         // Number of columns in the grid (optional)
+        ));
+        ?>
     
     <?php endwhile; // end of the loop. ?>
     </section>
