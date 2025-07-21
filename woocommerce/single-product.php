@@ -128,6 +128,12 @@ get_header('shop');
             
             <div class="product-description">
                 <?php
+                // Custom stock status display
+                if ($product->is_in_stock()) {
+                    echo '<div class="stock-status in-stock"><span class="status-text">' . __('In Stock', 'woocommerce') . '</span></div>';
+                } else {
+                    echo '<div class="stock-status out-of-stock"><span class="status-text">' . __('Out of Stock', 'woocommerce') . '</span></div>';
+                }
                 // Custom short description template with icon
                 if ($product->get_short_description()) {
                     echo '<div class="short-description woocommerce-product-details__short-description">';
@@ -151,12 +157,7 @@ get_header('shop');
             
             <div class="custom-add-to-cart">
                 <?php
-                // Custom stock status display
-                if ($product->is_in_stock()) {
-                    echo '<div class="stock-status in-stock"><span class="status-text">' . __('In Stock', 'woocommerce') . '</span></div>';
-                } else {
-                    echo '<div class="stock-status out-of-stock"><span class="status-text">' . __('Out of Stock', 'woocommerce') . '</span></div>';
-                }
+                
                 
                 // Preserve WooCommerce's add to cart functionality but customize the template
                 remove_action('woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30);
