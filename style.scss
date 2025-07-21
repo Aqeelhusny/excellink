@@ -578,15 +578,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 /* Apply Bootstrap Grid to WooCommerce product lists */
-ul.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 2fr));
-  justify-content: center;
-  row-gap: 12px;
-  column-gap: 6px;
-  padding: 0;
-  list-style: none;
-}
+// ul.products {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(170px, 2fr));
+//   justify-content: center;
+//   row-gap: 12px;
+//   column-gap: 6px;
+//   padding: 0;
+//   list-style: none;
+// }
 
 .custom-product {
   margin-bottom: 20px;
@@ -661,7 +661,14 @@ ul.products {
   // margin-right: -10px;
   // margin-left: -10px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(195px, 2fr));
+  row-gap: 15px;
+}
+@media (max-width: 768px) {
+  .woocommerce ul.products {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
 }
 
 // /* Custom product card styling */
