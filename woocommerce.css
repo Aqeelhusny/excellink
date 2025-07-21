@@ -459,7 +459,9 @@ p.no-comments {
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: #3d9cd2;
+	background-color: #b8d23d;
+	padding: 10px 15px;
+	border-radius: 15px;
 }
 
 .woocommerce-error {
