@@ -126,13 +126,13 @@
                         ?>
                     </nav>
                     
-                    <div class="header-links d-flex flex-column mt-4">
-                        <p class="mb-2">
+                    <div class="header-links mt-4 text-center">
+                        <p class="rounded py-1" style="background-color: #f8f8f8;">
                             <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>">
                                 <?php esc_html_e('Account', 'excellink-store'); ?>
                             </a>
                         </p>
-                        <p class="mb-0">
+                        <p class="rounded py-1" style="background-color: #f8f8f8;">
                             <a href="#">Tracking</a>
                         </p>
                     </div>

@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create dropdown toggle button
         const dropdownToggle = document.createElement('span');
         dropdownToggle.className = 'dropdown-toggle';
-        dropdownToggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
+        // dropdownToggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
         
         // Only append on mobile view
         if (window.innerWidth < 768) {
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hasChildrenItems.forEach(function(item) {
                     const dropdownToggle = document.createElement('span');
                     dropdownToggle.className = 'dropdown-toggle';
-                    dropdownToggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
+                    // dropdownToggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
                     item.appendChild(dropdownToggle);
                 });
             }

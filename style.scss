@@ -346,12 +346,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 
   /* Header links */
-  .header-links {
-    text-align: center;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-    margin-top: 10px;
-  }
+  // .header-links {
+  //   text-align: center;
+  //   border-top: 1px solid #eee;
+  //   padding-top: 10px;
+  //   margin-top: 10px;
+  // }
 }
 
 // .excellogoimg{
@@ -1373,4 +1373,79 @@ div.shop-toolbar.custom-shop-toolbar p.woocommerce-result-count {
 div.shop-toolbar.custom-shop-toolbar .woocommerce-ordering {
   margin-left: auto;
   margin-bottom: 0px;
+}
+
+/* Basic Reset & Styling */
+.mobile-navigation ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.mobile-navigation a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s;
+}
+
+.mobile-navigation a:hover {
+    background: #f9f9f9;
+}
+
+/* Dropdown Toggles */
+.mobile-navigation .dropdown-toggle {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: #999;
+    transition: transform 0.3s;
+}
+
+/* Submenu Styling */
+.mobile-navigation .sub-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    // background: #f8f8f8;
+    padding-left: 10px;
+}
+
+.mobile-navigation li.menu-item-has-children:hover > .sub-menu {
+    max-height: 1000px; /* Large enough to reveal all items */
+    padding: 5px 0;
+}
+
+/* Icon Rotate on Hover */
+.mobile-navigation li.menu-item-has-children:hover > a .dropdown-toggle {
+    transform: rotate(180deg);
+}
+
+/* Active Menu Indicator */
+.mobile-navigation .current-menu-item > a {
+    background: #e9f5ff;
+    color: #007bff;
+}
+
+/* Header Links */
+.header-links a {
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 0;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.header-links a:hover {
+    color: #0056b3;
+}
+
+/* Optional: Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
